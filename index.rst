@@ -83,6 +83,12 @@ The applications would use the UWS service as a regular web service, using a cli
 
 With this design, the Terraform work, the Cloud SQL Auth Proxy, and the workload identity management would all be handled by the UWS service, and none of that configuration would be required for a new UWS-based application.
 
+.. note::
+
+   In this proposal, the scope of this service is only internally-written Rubin Science Platform applications that would be using the `Safir UWS library`_.
+   This design does not propose replacing the UWS databases used by other services, such as the CADC TAP service used by the Rubin Science Platform.
+   It would be possible to unify *all* UWS databases used by the Science Platform inside this service, and there may be some advantages (such as a cross-service history API) in doing so, but that would be substantial additional work and is not a necessary part of this design.
+
 API
 ===
 
