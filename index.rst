@@ -152,7 +152,7 @@ The UWS service would therefore have to make a request to the Gafaelfawr token-i
 We would probably want to add the associated service, if available, to an HTTP request header set by the ingress.
 
 In this model, the UWS service itself will not require any token scopes.
-It will accept requests authenticated by any internal token, but it will be configured with an internal allow list of applications that are permitted to use the service.
+Instead, there will be an allow list of services whose internal tokens are permitted to talk to the UWS service, and a separate admin route that allows environment administrators to see the data for any service.
 
 Application routes
 ------------------
