@@ -100,7 +100,7 @@ Authentication
 --------------
 
 There are two possible ways, with different trade-offs, to authenticate application requests to the UWS service.
-The bot token approach is the simplest, so we will likely start with that, but the second approach has some useful properties that are worth consideration.
+We decided to take the delegated token approach, since it seems like the more elegant solution and shouldn't be that much additional work.
 
 Bot tokens
 """"""""""
@@ -150,6 +150,9 @@ But it is a fairly large configuration change.
 The second problem is more minor: currently, the service associated with an internal token is not added to an HTTP header in the incoming request.
 The UWS service would therefore have to make a request to the Gafaelfawr token-info endpoint for every request to determine the associated service, which increases the latency cost of this design.
 We would probably want to add the associated service, if available, to an HTTP request header set by the ingress.
+
+In this model, the UWS service itself will not require any token scopes.
+It will accept requests authenticated by any internal token, but it will be configured with an internal allow list of applications that are permitted to use the service.
 
 Application routes
 ------------------
