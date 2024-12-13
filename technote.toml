@@ -5,13 +5,10 @@ canonical_url = "https://sqr-096.lsst.io"
 github_url = "https://github.com/lsst-sqre/sqr-096"
 github_default_branch = "main"
 date_created = 2024-09-17
-date_updated = 2024-09-17
+date_updated = 2024-12-13
 organization.name = "Vera C. Rubin Observatory"
 organization.ror = "https://ror.org/048g3cy84"
 license.id = "CC-BY-4.0"
-
-[technote.status]
-state = "draft"
 
 [[technote.authors]]
 name.given = "Russ"
@@ -22,3 +19,6 @@ internal_id = "allberyr"
 name = "Vera C. Rubin Observatory Project Office"
 internal_id = "RubinObs"
 address = "950 N. Cherry Ave., Tucson, AZ 85719, USA"
+
+[technote.sphinx]
+nitpick = true
